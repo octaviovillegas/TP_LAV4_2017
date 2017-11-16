@@ -1,6 +1,7 @@
 #Listado de sitios de alumnos
 
 
+
 https://matiass2010.github/TP_LAV4_2017/  
 
 https://virtualgithub.github.io/tpJuegos/ 
@@ -16,6 +17,13 @@ https://alanns7.github.io/TP_LAV4_2017/
 https://ccwittv.github.io/TP_LAV4_2017/
 
 https://tamm005.github.io/TP_LAV4_2017/
+
+#Y los que no entendieron la primer consigna, que era hacer fork de este repositorio.
+
+https://nicocabrera.github.io/playroom/
+
+https://metalemi7.github.io/TP1-Lab4-SalaDeJuegos/
+
 
 
 
