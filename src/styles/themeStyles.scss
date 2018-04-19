@@ -1,0 +1,45 @@
+@import '~@angular/material/theming';
+@import "_variablesStyles.scss";
+
+@include mat-core();
+
+$may-palette: (
+  50: #fff3e0,
+  100: #ffe0b2,
+  200: #ffcc80,
+  300: #ffb74d,
+  400: #ffa726,
+  500: #ff9800,
+  600: #fb8c00,
+  700: #f57c00,
+  800: #ef6c00,
+  900: #e65100,
+  A100: #ffd180,
+  A200: #ffab40,
+  A400: #ff9100,
+  A700: #ff6d00,
+  contrast: (
+    50: $white-87-opacity,
+    100: $white-87-opacity,
+    200: $white-87-opacity,
+    300: $white-87-opacity,
+    400: $white-87-opacity,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: white,
+    900: white,
+    A100: $white-87-opacity,
+    A200: $white-87-opacity,
+    A400: $white-87-opacity,
+    A700: black,
+  )
+);
+// Define the theme.
+$candy-app-primary: mat-palette($may-palette);
+$candy-app-accent:  mat-palette($may-palette, A200, A100, A400);
+$candy-app-warn: mat-palette($mat-red);
+$light-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+$dark-theme: mat-dark-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+@include angular-material-theme($dark-theme);
