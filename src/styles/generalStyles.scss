@@ -165,6 +165,7 @@ body{
 }
 
 .div-card{
+  display:flex;
   :hover{
     background-color: $background-color-four;
   }
@@ -174,7 +175,6 @@ body{
   margin: 10px 20px;
   padding: 24px 12px;
   background-color: $background-color-three;
-  width: 30%;
-
+  flex: 100%;
 }
 

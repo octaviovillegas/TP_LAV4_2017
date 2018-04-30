@@ -1,8 +1,8 @@
 <app-cabecera>  </app-cabecera>
-<div class="container">
+<div class="flex-100">
+  <div class="first-item flex-h flex-100">
 
-  <div class="first-item">
-    <div class="div-card">
+    <div class="div-card flex-20">
       <div class="cards-container flex-v" routerLink="/Juegos">
         <div class="card-content">
           <div class="expand-center">
@@ -17,18 +17,58 @@
         </div>
       </div>
     </div>
+
+    <div class="div-card flex-20">
+      <div class="cards-container flex-v" routerLink="/Listado">
+        <div class="card-content">
+          <div class="expand-center">
+            <img src="./assets/imagenes/listado.jpg" class="media-object imagenDeMenu" >
+          </div>
+        </div>
+        <div class="expand-center first-item title-two">
+          <div>Listados de resultados</div>
+        </div>
+        <div class="first-item epigraph">
+          <p>Los listados de los resultados con ordenamiento y busqueda</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-card flex-20">
+      <div class="cards-container flex-v" routerLink="/Juego">
+        <div class="card-content">
+          <div class="expand-center">
+            <img src="./assets/imagenes/Configuracion.png" class="media-object imagenDeMenu" >
+          </div>
+        </div>
+        <div class="expand-center first-item title-two">
+          <div>Configuraci&oacute;n</div>
+        </div>
+        <div class="first-item epigraph">
+          <p>Ajustes de la aplicacion y los métodos de autentificación</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-card flex-20">
+      <div class="cards-container flex-v" routerLink="/Jugadores">
+        <div class="card-content">
+          <div class="expand-center">
+            <img src="./assets/imagenes/jugadores.png" class="media-object imagenDeMenu" >
+          </div>
+        </div>
+        <div class="expand-center first-item title-two">
+          <div>Juegadores</div>
+        </div>
+        <div class="first-item epigraph">
+          <p>Listado de jugadores</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-
-
-  <ul class="list-group">
-    <!--<li class="list-group-item list-group-item-danger">-->
-    <!--<div class="media-body">-->
-    <!--<div class="hero-text">-->
-    <!--<h4 >Menú Principal</h4>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</li>-->
+  <!-- <ul class="list-group">
     <li class="list-group-item list-group-item-success">
       <a routerLink="/Juegos">
         <div class="media">
@@ -81,5 +121,28 @@
         </div>
       </a>
     </li>
-  </ul>
+  </1ul>
+  -->
+  <div class="flex-v">
+    <div class="button-row">
+      <!--<button mat-raised-button (click)="verPaises()">Ver Paises</button> -->
+    </div>
+    <div class="flex-h">
+      <div class="flex-60">
+        <div *ngFor="let pais of listadoPaises" class="flex-h flex-100" (click)="paisSeleccionadoClick(pais)">
+          <div class="flex-50">Nombre: {{pais.name}} </div>
+          <div class="flex-50" style="margin-left: 1em"> Capital:  {{pais.capital}}</div>
+        </div>
+      </div>
+      <div class="flex-40">
+        <div>
+          {{paisSeleccionado.name}}
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
 </div>
