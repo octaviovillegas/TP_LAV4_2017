@@ -8,7 +8,7 @@ body{
 .nav-bar{
   background: linear-gradient($background-color-one, $background-color-seven);
   border-bottom: 1px solid $detail-color-one;
-  height: 4em;
+  //height: 4em;
 }
 
 .flex{
@@ -176,5 +176,12 @@ body{
   padding: 24px 12px;
   background-color: $background-color-three;
   flex: 100%;
+}
+
+.circle-image{
+  border-radius: 50%;
+  background-color: red;
+  width: 5em;
+  height: 5em;
 }
 
