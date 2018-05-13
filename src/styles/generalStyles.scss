@@ -1,0 +1,187 @@
+@import "_variablesStyles.scss";
+
+body{
+    background-color: $background-color-one !important;
+  color: $text-color !important;
+}
+
+.nav-bar{
+  background: linear-gradient($background-color-one, $background-color-seven);
+  border-bottom: 1px solid $detail-color-one;
+  //height: 4em;
+}
+
+.flex{
+  display: flex;
+  &-v{
+    display: flex;
+    flex-direction: column;
+    &-center{
+      vertical-align: middle;
+    }
+  }
+  &-h{
+    display: flex;
+    flex-direction: row;
+    &-center{
+      align-items: center;
+    }
+    &-right{
+      align-items: flex-end;
+    }
+  }
+  &-grow {
+    &-0{
+      flex-grow:0;
+    }
+    &-1{
+      flex-grow:1;
+    }
+    &-2{
+      flex-grow:2;
+    }
+  }
+  &-10{
+    flex: 10%;
+  }
+  &-20{
+    flex: 20%;
+  }
+  &-25{
+    flex:25%;
+  }
+  &-30{
+    flex: 30%;
+  }
+  &-35{
+    flex:35%;
+  }
+  &-40{
+    flex: 40%;
+  }
+  &-50{
+    flex: 50%;
+  }
+  &-60{
+    flex: 60%;
+  }
+  &-70{
+    flex: 70%;
+  }
+  &-80{
+    flex: 80%;
+  }
+  &-90{
+    flex: 90%;
+  }
+  &-100{
+    flex:100%;
+  }
+}
+
+.expand{
+  width: 100%;
+  height: 100%;
+  &-w{
+    width: 100%;
+  }
+  &-h{
+    height: 100%;
+  }
+  &-right{
+    display: flex;
+    justify-content: flex-end !important;
+  }
+  &-center{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.size{
+  &-h{
+    &-30{
+      width: 30%;
+    }
+    &-40{
+      width: 40%;
+    }
+    &-50{
+      //half-page
+      width: 50%;
+    }
+    &-60{
+      width: 60%;
+    }
+    &-70{
+      width: 70%;
+    }
+  }
+}
+
+.container-full{
+   padding: 1em;
+}
+
+.container-row{
+  padding: 0 1em;
+}
+
+.container-same-line{
+  padding-left: 1em;
+}
+
+.title{
+  &-one{
+    background: -webkit-linear-gradient(#f7f0da, #c88416);
+    //background: -webkit-linear-gradient($detail-color-one, $detail-color-two);
+    color: transparent;
+    font-size: 2rem;
+    font-weight: 600;
+    -webkit-background-clip: text;
+  }
+  &-detail{
+    color: $detail-color-one;
+    :hover{
+      color: $detail-color-two !important;
+      background-color: $background-color-five !important;
+    }
+  }
+  &-two{
+    color: $detail-color-one;
+    font-size: 2rem;
+    font-weight: 600;
+    -webkit-background-clip: text;
+  }
+}
+
+.epigraph{
+  display: flex;
+  text-align: justify;
+}
+
+.first-item{
+  padding-top: 1em;
+}
+
+.div-card{
+  display:flex;
+  :hover{
+    background-color: $background-color-four;
+  }
+}
+.cards-container{
+  border-radius: 10px;
+  margin: 10px 20px;
+  padding: 24px 12px;
+  background-color: $background-color-three;
+  flex: 100%;
+}
+
+.circle-image{
+  border-radius: 50%;
+  background-color: red;
+  width: 5em;
+  height: 5em;
+}
+
