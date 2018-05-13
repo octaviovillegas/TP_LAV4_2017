@@ -1,15 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MatIconModule, MatFormFieldModule, MatInputModule  } from '@angular/material';
+import { MatIconModule, MatFormFieldModule, MatInputModule,
+  MatDialogModule
+} from '@angular/material';
+
 
 import { AgmCoreModule } from '@agm/core';
-
-//  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-// import { AccordionModule } from 'ngx-bootstrap';
-// agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
+
+//FIREBASE
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { environment } from '../environments/environment';
 
 
 // MIS COMPONENTES
@@ -33,33 +41,16 @@ import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
-import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
 import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-google.component';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 
 import { RuteandoModule } from './ruteando/ruteando.module';
 
-import { MiHttpService } from './servicios/mi-http/mi-http.service';
-import { PaisesService } from './servicios/paises.service';
+import { MiHttpService } from './servicios/mi-http.service';
 import { JugadoresService } from './servicios/jugadores.service';
 import { JuegoServiceService } from './servicios/juego-service.service';
 
 import { SexoPipe } from './pipes/sexo.pipe';
-
-// declaro donde quiero que se dirija
-/*
-const MiRuteo = [{path: 'error' , component: ErrorComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Principal' , component: PrincipalComponent , pathMatch: 'full'},
-{path: 'Adivina' , component: AdivinaElNumeroComponent},
-{path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-{path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-{path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-{path: '' , component: LoginComponent , pathMatch: 'full'},
-
-{path: '**' , component: ErrorComponent} ];
-*/
-
 
 @NgModule({
   declarations: [
@@ -81,7 +72,6 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
     CabeceraComponent,
     QuienSoyComponent,
     AnagramaComponent,
-    ListadoDePaisesComponent,
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
@@ -89,23 +79,25 @@ const MiRuteo = [{path: 'error' , component: ErrorComponent},
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInputModule,    
     RuteandoModule,
     HttpModule,
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
-    })
-    // NgbModule.forRoot(MiRuteo),
-    // importo el ruteo
-    // RouterModule.forRoot(MiRuteo)
+    })   
   ],
   exports: [
     MatIconModule
   ],
-  providers: [ JuegoServiceService, MiHttpService, PaisesService, ArchivosJugadoresService, JugadoresService],
+  providers: [ JuegoServiceService, MiHttpService, ArchivosJugadoresService, JugadoresService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 

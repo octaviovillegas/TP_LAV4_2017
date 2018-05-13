@@ -123,26 +123,6 @@
     </li>
   </1ul>
   -->
-  <div class="flex-v">
-    <div class="button-row">
-      <!--<button mat-raised-button (click)="verPaises()">Ver Paises</button> -->
-    </div>
-    <div class="flex-h">
-      <div class="flex-60">
-        <div *ngFor="let pais of listadoPaises" class="flex-h flex-100" (click)="paisSeleccionadoClick(pais)">
-          <div class="flex-50">Nombre: {{pais.name}} </div>
-          <div class="flex-50" style="margin-left: 1em"> Capital:  {{pais.capital}}</div>
-        </div>
-      </div>
-      <div class="flex-40">
-        <div>
-          {{paisSeleccionado.name}}
-        </div>
-
-
-      </div>
-    </div>
-  </div>
 
 
 </div>
